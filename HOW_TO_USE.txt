@@ -1,0 +1,107 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║             🖱️  MOUSE TRACKER - HOW TO USE                       ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+📌 FIRST TIME SETUP (2 Steps)
+═══════════════════════════════════
+
+Step 1: Install Python 3.11 or 3.12
+   → https://www.python.org/downloads/
+
+Step 2: Double-click INSTALL.bat
+   → Installs all dependencies automatically
+
+
+🚀 RUNNING THE APP
+════════════════════
+
+Just double-click:  START.bat
+
+That's it! The app will open.
+
+
+📖 USING THE APP
+═════════════════
+
+1. Click "▶️ Start Recording"
+2. Move your mouse around the screen
+3. Click "⏹️ Stop"
+4. Click "🔥 Show Heatmap" to see results
+5. Click "📹 Record Video" to create animation
+6. Save and share!
+
+
+⚙️ ADJUSTING SETTINGS
+═══════════════════════
+
+Use the sliders to adjust:
+   • Radius: 60 (default)
+   • Intensity: 0.9 (default)  
+   • Blur: 25 (default)
+
+
+🎨 COLOR MEANINGS
+══════════════════
+
+🔵 Blue   = Low activity
+🟢 Green  = Medium activity
+🟡 Yellow = High activity
+🔴 Red    = Maximum activity (hot zones!)
+
+
+📁 FILE STRUCTURE
+══════════════════
+
+Root Folder:
+   INSTALL.bat    - Install dependencies
+   START.bat      - Launch app
+   README.md      - Full documentation
+
+docs/             - All documentation
+scripts/          - Advanced scripts
+
+
+❗ TROUBLESHOOTING
+═══════════════════
+
+Problem: Python not found
+   → Install Python and check "Add to PATH"
+
+Problem: Can't install dependencies
+   → Run INSTALL.bat as Administrator
+
+Problem: Video won't play
+   → Install VLC Media Player
+   → Or save as AVI format
+
+Problem: App won't start
+   → Check if all dependencies installed
+   → See docs/TROUBLESHOOTING.md
+
+
+💡 TIPS
+════════
+
+✓ Record at least 1000 points for good heatmaps
+✓ Move mouse naturally
+✓ Save videos as AVI for best compatibility
+✓ Use default settings for presentations
+
+
+📧 MORE HELP
+═════════════
+
+Full docs:    README.md
+Quick start:  docs/QUICK_START.txt  
+Problems:     docs/TROUBLESHOOTING.md
+
+
+═══════════════════════════════════════════════════════════════════
+
+              Made with ❤️ - Easy to use!
+
+═══════════════════════════════════════════════════════════════════
+
