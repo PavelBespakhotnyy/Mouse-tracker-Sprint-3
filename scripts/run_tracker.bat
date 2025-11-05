@@ -4,9 +4,7 @@ title Mouse Tracker
 color 0A
 
 echo.
-echo ===============================================================
-echo          Mouse Tracker
-echo ===============================================================
+echo Mouse Tracker
 echo.
 echo Launching application...
 echo.

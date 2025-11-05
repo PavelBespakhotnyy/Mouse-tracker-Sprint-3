@@ -4,9 +4,7 @@ title Installation Fix - Mouse Tracker
 color 0E
 
 echo.
-echo ===============================================================
-echo     Installation Fix
-echo ===============================================================
+echo Installation Fix
 echo.
 
 REM Check Python
@@ -36,15 +34,11 @@ if /i not "%continue%"=="y" (
 )
 
 echo.
-echo ===============================================================
 echo Updating pip...
-echo ===============================================================
 python -m pip install --upgrade pip
 echo.
 
-echo ===============================================================
 echo Installing libraries one by one (may take time)...
-echo ===============================================================
 echo.
 
 echo [1/2] Installing pynput...
@@ -62,10 +56,7 @@ if errorlevel 1 (
     pip install opencv-python --only-binary=:all:
 )
 echo.
-
-echo ===============================================================
 echo Checking installed libraries...
-echo ===============================================================
 echo.
 
 python -c "import pynput; print('[OK] pynput installed')" 2>nul || echo [FAIL] pynput not installed
@@ -75,9 +66,7 @@ python -c "import mss; print('[OK] mss installed')" 2>nul || echo [FAIL] mss not
 python -c "import cv2; print('[OK] opencv:', cv2.__version__)" 2>nul || echo [FAIL] opencv not installed
 
 echo.
-echo ===============================================================
 echo Check completed
-echo ===============================================================
 echo.
 
 python -c "import pynput, PIL, numpy, mss, cv2" >nul 2>&1
@@ -97,9 +86,7 @@ if errorlevel 1 (
     echo.
 ) else (
     echo.
-    echo ===============================================================
-    echo          Installation completed successfully!
-    echo ===============================================================
+    echo Installation completed successfully!
     echo.
     echo Launch app: run_tracker.bat
     echo.

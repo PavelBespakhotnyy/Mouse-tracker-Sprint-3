@@ -4,9 +4,7 @@ title Mouse Tracker Dependencies Installation
 color 0B
 
 echo.
-echo ===============================================================
-echo     Mouse Tracker Dependencies Installation
-echo ===============================================================
+echo Mouse Tracker Dependencies Installation
 echo.
 
 REM Check Python
@@ -45,9 +43,7 @@ if errorlevel 1 (
     echo.
 ) else (
     echo.
-    echo ===============================================================
-    echo          Installation completed successfully!
-    echo ===============================================================
+    echo Installation completed successfully!
     echo.
     echo Now you can launch the app:
     echo - Double-click run_tracker.bat
