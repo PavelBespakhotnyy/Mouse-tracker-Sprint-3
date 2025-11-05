@@ -4,11 +4,7 @@ title Mouse Tracker - One-Click Install
 color 0B
 
 echo.
-echo ===============================================================
-echo.
-echo          MOUSE TRACKER - ONE-CLICK INSTALLER
-echo.
-echo ===============================================================
+echo MOUSE TRACKER - ONE-CLICK INSTALLER
 echo.
 echo Welcome! This will install everything you need.
 echo.
@@ -84,9 +80,8 @@ if errorlevel 1 (
 echo.
 
 if %DEPS_OK%==1 (
-    echo ===============================================================
-    echo          ALL DEPENDENCIES ALREADY INSTALLED!
-    echo ===============================================================
+    echo.
+    echo ALL DEPENDENCIES ALREADY INSTALLED!
     echo.
     echo Nothing to install. You're ready to go!
     echo.
@@ -115,9 +110,7 @@ python -c "import mss" >nul 2>&1 || pip install mss --quiet
 python -c "import cv2" >nul 2>&1 || pip install opencv-python --only-binary=:all: --quiet
 
 echo.
-echo ═══════════════════════════════════════════════════════════════
 echo Verifying installation...
-echo ═══════════════════════════════════════════════════════════════
 echo.
 
 python -c "import pynput; print('[OK] pynput')" 2>nul || echo [FAIL] pynput failed
@@ -130,18 +123,16 @@ echo.
 
 python -c "import pynput, PIL, numpy, mss, cv2" >nul 2>&1
 if errorlevel 1 (
-    echo ===============================================================
-    echo               INSTALLATION HAD ISSUES
-    echo ===============================================================
+    echo.
+    echo INSTALLATION HAD ISSUES
     echo.
     echo Please try:
     echo 1. Run as Administrator
     echo 2. Check scripts\install_fix.bat for detailed installation
     echo.
 ) else (
-    echo ===============================================================
-    echo          INSTALLATION COMPLETED SUCCESSFULLY!
-    echo ===============================================================
+    echo.
+    echo INSTALLATION COMPLETED SUCCESSFULLY!
     echo.
     echo You're all set!
     echo.

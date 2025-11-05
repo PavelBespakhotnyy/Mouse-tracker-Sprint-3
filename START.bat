@@ -5,11 +5,7 @@ color 0A
 
 cls
 echo.
-echo ===============================================================
-echo.
-echo                  STARTING MOUSE TRACKER
-echo.
-echo ===============================================================
+echo STARTING MOUSE TRACKER
 echo.
 
 REM Check Python
@@ -37,16 +33,13 @@ if errorlevel 1 (
 echo Starting Mouse Tracker...
 echo.
 echo Close this window or press Ctrl+C to stop the app
-echo ===============================================================
 echo.
 
 python mouse_tracker.py
 
 if errorlevel 1 (
     echo.
-    echo ===============================================================
     echo ERROR: An error occurred
-    echo ===============================================================
     echo.
     pause
 )
