@@ -33,11 +33,6 @@ Double-click: **`START.bat`**
 - 🟡 Yellow = high activity
 - 🔴 Red = very high activity (hot zones)
 
-**Settings (sliders):**
-- Radius (60) - point size
-- Intensity (0.9) - brightness
-- Blur (25) - smoothness
-
 ---
 
 ## ❗ COMMON PROBLEMS
