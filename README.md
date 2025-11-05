@@ -6,8 +6,10 @@ Windows application: records mouse movements and creates heatmaps with videos.
 
 ## 🚀 QUICK START
 
-### 1. Install Python 3.11
-👉 https://www.python.org/downloads/release/python-3118/
+### 1. Install Python
+👉 https://www.python.org/downloads/
+
+💡 **Recommended:** Python 3.11 or 3.12 (but newer versions may work too)
 
 ⚠️ **Must check:** `Add Python to PATH`
 
@@ -41,18 +43,21 @@ Double-click: **`START.bat`**
 ## ❗ COMMON PROBLEMS
 
 **Python not found:**
-- Install Python 3.11 with "Add Python to PATH" checked
+- Install Python with "Add Python to PATH" checked
 - Restart computer
 
-**Can't install:**
+**Can't install dependencies:**
 - Right-click on `INSTALL.bat` → "Run as administrator"
+- Or try: `pip install pynput Pillow numpy mss opencv-python`
+
+**Installation fails on newer Python:**
+- Some libraries may not support very new Python versions yet
+- Try Python 3.11 or 3.12: https://www.python.org/downloads/
+- Or wait for library updates
 
 **Video won't play:**
 - Install VLC Player: https://www.videolan.org/
 - Or save as AVI format
-
-**Python 3.14:**
-- Uninstall 3.14, install 3.11 (version 3.14 is too new)
 
 **App won't start:**
 - Open command prompt
@@ -63,7 +68,7 @@ Double-click: **`START.bat`**
 ## ⚙️ REQUIREMENTS
 
 - Windows 10/11
-- Python 3.11 or 3.12 (NOT 3.14!)
+- Python 3.7+ (recommended: 3.11 or 3.12)
 - 4 GB RAM
 - 500 MB disk space
 
@@ -97,15 +102,3 @@ C:\Users\YourUsername\AppData\Local\Programs\Python\Python311\Lib\site-packages\
 ✅ Everything works locally  
 ✅ Nothing sent to internet  
 ✅ Open source code
-
----
-
-## 📄 LICENSE
-
-MIT License - free for personal and commercial use
-
----
-
-**Made with ❤️ | Version 1.2.0**
-
-⭐ Star if useful!

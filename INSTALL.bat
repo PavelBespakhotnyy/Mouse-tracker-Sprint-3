@@ -4,11 +4,11 @@ title Mouse Tracker - One-Click Install
 color 0B
 
 echo.
-echo ╔═══════════════════════════════════════════════════════════════╗
-echo ║                                                               ║
-echo ║        🖱️  MOUSE TRACKER - ONE-CLICK INSTALLER              ║
-echo ║                                                               ║
-echo ╚═══════════════════════════════════════════════════════════════╝
+echo ===============================================================
+echo.
+echo          MOUSE TRACKER - ONE-CLICK INSTALLER
+echo.
+echo ===============================================================
 echo.
 echo Welcome! This will install everything you need.
 echo.
@@ -16,19 +16,23 @@ echo.
 REM Check Python
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ Python not found!
+    echo ERROR: Python not found!
     echo.
-    echo Please install Python 3.11 or 3.12:
-    echo https://www.python.org/downloads/release/python-3118/
+    echo Please install Python from:
+    echo https://www.python.org/downloads/
     echo.
-    echo ⚠️  Remember to check "Add Python to PATH" during installation
+    echo Recommended: Python 3.11 or 3.12
+    echo.
+    echo WARNING: Remember to check "Add Python to PATH" during installation
     echo.
     pause
     exit /b 1
 )
 
-echo ✅ Python found:
+echo Python found:
 python --version
+echo.
+echo NOTE: Python 3.11-3.12 recommended, but newer versions may work
 echo.
 
 REM Check if dependencies already installed
@@ -40,49 +44,49 @@ set DEPS_OK=1
 python -c "import pynput" >nul 2>&1
 if errorlevel 1 (
     set DEPS_OK=0
-    echo   ⬜ pynput - not installed
+    echo   [ ] pynput - not installed
 ) else (
-    echo   ✅ pynput - already installed
+    echo   [OK] pynput - already installed
 )
 
 python -c "import PIL" >nul 2>&1
 if errorlevel 1 (
     set DEPS_OK=0
-    echo   ⬜ Pillow - not installed
+    echo   [ ] Pillow - not installed
 ) else (
-    echo   ✅ Pillow - already installed
+    echo   [OK] Pillow - already installed
 )
 
 python -c "import numpy" >nul 2>&1
 if errorlevel 1 (
     set DEPS_OK=0
-    echo   ⬜ numpy - not installed
+    echo   [ ] numpy - not installed
 ) else (
-    echo   ✅ numpy - already installed
+    echo   [OK] numpy - already installed
 )
 
 python -c "import mss" >nul 2>&1
 if errorlevel 1 (
     set DEPS_OK=0
-    echo   ⬜ mss - not installed
+    echo   [ ] mss - not installed
 ) else (
-    echo   ✅ mss - already installed
+    echo   [OK] mss - already installed
 )
 
 python -c "import cv2" >nul 2>&1
 if errorlevel 1 (
     set DEPS_OK=0
-    echo   ⬜ opencv - not installed
+    echo   [ ] opencv - not installed
 ) else (
-    echo   ✅ opencv - already installed
+    echo   [OK] opencv - already installed
 )
 
 echo.
 
 if %DEPS_OK%==1 (
-    echo ╔═══════════════════════════════════════════════════════════════╗
-    echo ║         ✅ ALL DEPENDENCIES ALREADY INSTALLED!               ║
-    echo ╚═══════════════════════════════════════════════════════════════╝
+    echo ===============================================================
+    echo          ALL DEPENDENCIES ALREADY INSTALLED!
+    echo ===============================================================
     echo.
     echo Nothing to install. You're ready to go!
     echo.
@@ -116,31 +120,30 @@ echo Verifying installation...
 echo ═══════════════════════════════════════════════════════════════
 echo.
 
-python -c "import pynput; print('✅ pynput')" 2>nul || echo ❌ pynput failed
-python -c "import PIL; print('✅ Pillow:', PIL.__version__)" 2>nul || echo ❌ Pillow failed
-python -c "import numpy; print('✅ numpy:', numpy.__version__)" 2>nul || echo ❌ numpy failed
-python -c "import mss; print('✅ mss')" 2>nul || echo ❌ mss failed
-python -c "import cv2; print('✅ opencv:', cv2.__version__)" 2>nul || echo ❌ opencv failed
+python -c "import pynput; print('[OK] pynput')" 2>nul || echo [FAIL] pynput failed
+python -c "import PIL; print('[OK] Pillow:', PIL.__version__)" 2>nul || echo [FAIL] Pillow failed
+python -c "import numpy; print('[OK] numpy:', numpy.__version__)" 2>nul || echo [FAIL] numpy failed
+python -c "import mss; print('[OK] mss')" 2>nul || echo [FAIL] mss failed
+python -c "import cv2; print('[OK] opencv:', cv2.__version__)" 2>nul || echo [FAIL] opencv failed
 
 echo.
 
 python -c "import pynput, PIL, numpy, mss, cv2" >nul 2>&1
 if errorlevel 1 (
-    echo ╔═══════════════════════════════════════════════════════════════╗
-    echo ║              ❌ INSTALLATION HAD ISSUES                      ║
-    echo ╚═══════════════════════════════════════════════════════════════╝
+    echo ===============================================================
+    echo               INSTALLATION HAD ISSUES
+    echo ===============================================================
     echo.
     echo Please try:
     echo 1. Run as Administrator
     echo 2. Check scripts\install_fix.bat for detailed installation
-    echo 3. See docs\TROUBLESHOOTING.md
     echo.
 ) else (
-    echo ╔═══════════════════════════════════════════════════════════════╗
-    echo ║         ✅ INSTALLATION COMPLETED SUCCESSFULLY!              ║
-    echo ╚═══════════════════════════════════════════════════════════════╝
+    echo ===============================================================
+    echo          INSTALLATION COMPLETED SUCCESSFULLY!
+    echo ===============================================================
     echo.
-    echo You're all set! 🎉
+    echo You're all set!
     echo.
     echo To start the app: Double-click START.bat
     echo.

@@ -5,17 +5,17 @@ color 0A
 
 cls
 echo.
-echo ╔═══════════════════════════════════════════════════════════════╗
-echo ║                                                               ║
-echo ║                    STARTING MOUSE TRACKER                     ║
-echo ║                                                               ║
-echo ╚═══════════════════════════════════════════════════════════════╝
+echo ===============================================================
+echo.
+echo                  STARTING MOUSE TRACKER
+echo.
+echo ===============================================================
 echo.
 
 REM Check Python
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ ERROR: Python not found!
+    echo ERROR: Python not found!
     echo.
     echo Please run INSTALL.bat first
     echo.
@@ -26,7 +26,7 @@ if errorlevel 1 (
 REM Quick dependency check
 python -c "import pynput, PIL, numpy, mss, cv2" >nul 2>&1
 if errorlevel 1 (
-    echo ❌ ERROR: Dependencies not installed!
+    echo ERROR: Dependencies not installed!
     echo.
     echo Please run INSTALL.bat first
     echo.
@@ -34,19 +34,19 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo ✅ Starting Mouse Tracker...
+echo Starting Mouse Tracker...
 echo.
 echo Close this window or press Ctrl+C to stop the app
-echo ═══════════════════════════════════════════════════════════════
+echo ===============================================================
 echo.
 
 python mouse_tracker.py
 
 if errorlevel 1 (
     echo.
-    echo ═══════════════════════════════════════════════════════════════
-    echo ❌ An error occurred
-    echo ═══════════════════════════════════════════════════════════════
+    echo ===============================================================
+    echo ERROR: An error occurred
+    echo ===============================================================
     echo.
     pause
 )
