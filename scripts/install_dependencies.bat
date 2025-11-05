@@ -1,57 +1,57 @@
 @echo off
 chcp 65001 >nul
-title Установка зависимостей Mouse Tracker
+title Mouse Tracker Dependencies Installation
 color 0B
 
 echo.
-echo ╔══════════════════════════════════════════════════════════╗
-echo ║     📦 Установка зависимостей Mouse Tracker             ║
-echo ╚══════════════════════════════════════════════════════════╝
+echo ===============================================================
+echo     Mouse Tracker Dependencies Installation
+echo ===============================================================
 echo.
 
-REM Проверка Python
+REM Check Python
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ ОШИБКА: Python не найден!
+    echo ERROR: Python not found!
     echo.
-    echo Скачайте и установите Python:
+    echo Download and install Python:
     echo https://www.python.org/downloads/
     echo.
-    echo ⚠️  При установке обязательно отметьте "Add Python to PATH"
+    echo WARNING: During installation check "Add Python to PATH"
     echo.
     pause
     exit /b 1
 )
 
-echo ✅ Python найден:
+echo Python found:
 python --version
 echo.
 
-echo Обновление pip...
+echo Updating pip...
 python -m pip install --upgrade pip
 echo.
 
-echo Установка зависимостей из requirements.txt...
+echo Installing dependencies from requirements.txt...
 echo.
 pip install -r requirements.txt
 echo.
 
 if errorlevel 1 (
     echo.
-    echo ❌ Ошибка при установке зависимостей.
+    echo ERROR: Failed to install dependencies.
     echo.
-    echo Попробуйте установить вручную:
+    echo Try to install manually:
     echo pip install pynput Pillow numpy mss opencv-python
     echo.
 ) else (
     echo.
-    echo ╔══════════════════════════════════════════════════════════╗
-    echo ║           ✅ Установка завершена успешно!               ║
-    echo ╚══════════════════════════════════════════════════════════╝
+    echo ===============================================================
+    echo          Installation completed successfully!
+    echo ===============================================================
     echo.
-    echo Теперь вы можете запустить приложение:
-    echo - Двойной клик на run_tracker.bat
-    echo - Или выполнить: python mouse_tracker.py
+    echo Now you can launch the app:
+    echo - Double-click run_tracker.bat
+    echo - Or run: python mouse_tracker.py
     echo.
 )
 

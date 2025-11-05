@@ -1,61 +1,61 @@
 @echo off
 chcp 65001 >nul
-title Исправление установки - Mouse Tracker
+title Installation Fix - Mouse Tracker
 color 0E
 
 echo.
-echo ╔══════════════════════════════════════════════════════════╗
-echo ║     🔧 Исправление установки зависимостей               ║
-echo ╚══════════════════════════════════════════════════════════╝
+echo ===============================================================
+echo     Installation Fix
+echo ===============================================================
 echo.
 
-REM Проверка Python
+REM Check Python
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ ОШИБКА: Python не найден!
+    echo ERROR: Python not found!
     pause
     exit /b 1
 )
 
-echo ✅ Версия Python:
+echo Python version:
 python --version
 echo.
 
-echo ⚠️  ВНИМАНИЕ: Обнаружена проблема совместимости
+echo WARNING: Compatibility issue detected
 echo.
-echo Python 3.14 слишком новый для некоторых библиотек.
-echo Рекомендуется Python 3.11 или 3.12
+echo Python 3.14 is too new for some libraries.
+echo Python 3.11 or 3.12 recommended
 echo.
-echo Продолжить установку с обходным решением? (y/n)
-set /p continue="Ваш выбор: "
+echo Continue installation with workaround? (y/n)
+set /p continue="Your choice: "
 if /i not "%continue%"=="y" (
     echo.
-    echo Установка отменена.
+    echo Installation cancelled.
     pause
     exit /b 0
 )
 
 echo.
-echo ════════════════════════════════════════════════════════════
-echo Обновление pip...
-echo ════════════════════════════════════════════════════════════
+echo ===============================================================
+echo Updating pip...
+echo ===============================================================
 python -m pip install --upgrade pip
 echo.
 
-echo ════════════════════════════════════════════════════════════
-echo Установка библиотек по одной (может занять время)...
-echo ════════════════════════════════════════════════════════════
+echo ===============================================================
+echo Installing libraries one by one (may take time)...
+echo ===============================================================
 echo.
 
-echo [1/2] Установка pynput...
+echo [1/2] Installing pynput...
 pip install pynput --no-cache-dir --verbose
 echo.
 
-echo [2/2] Установка остальных библиотек (Pillow, numpy, mss, opencv)...
-echo     Используем готовые бинарные файлы (это может занять время)...
+echo [2/2] Installing other libraries (Pillow, numpy, mss, opencv)...
+echo     Using pre-built binaries (this may take time)...
 pip install Pillow numpy mss opencv-python --only-binary=:all:
 if errorlevel 1 (
-    echo ⚠️  Ошибка. Пробуем установить по одной...
+    echo WARNING: Error. Trying to install one by one...
     pip install Pillow --only-binary=:all:
     pip install numpy --only-binary=:all:
     pip install mss --only-binary=:all:
@@ -63,45 +63,45 @@ if errorlevel 1 (
 )
 echo.
 
-echo ════════════════════════════════════════════════════════════
-echo Проверка установленных библиотек...
-echo ════════════════════════════════════════════════════════════
+echo ===============================================================
+echo Checking installed libraries...
+echo ===============================================================
 echo.
 
-python -c "import pynput; print('✅ pynput: установлен')" 2>nul || echo ❌ pynput не установлен
-python -c "import PIL; print('✅ Pillow:', PIL.__version__)" 2>nul || echo ❌ Pillow не установлен
-python -c "import numpy; print('✅ numpy:', numpy.__version__)" 2>nul || echo ❌ numpy не установлен
-python -c "import mss; print('✅ mss: установлен')" 2>nul || echo ❌ mss не установлен
-python -c "import cv2; print('✅ opencv:', cv2.__version__)" 2>nul || echo ❌ opencv не установлен
+python -c "import pynput; print('[OK] pynput installed')" 2>nul || echo [FAIL] pynput not installed
+python -c "import PIL; print('[OK] Pillow:', PIL.__version__)" 2>nul || echo [FAIL] Pillow not installed
+python -c "import numpy; print('[OK] numpy:', numpy.__version__)" 2>nul || echo [FAIL] numpy not installed
+python -c "import mss; print('[OK] mss installed')" 2>nul || echo [FAIL] mss not installed
+python -c "import cv2; print('[OK] opencv:', cv2.__version__)" 2>nul || echo [FAIL] opencv not installed
 
 echo.
-echo ════════════════════════════════════════════════════════════
-echo Проверка завершена
-echo ════════════════════════════════════════════════════════════
+echo ===============================================================
+echo Check completed
+echo ===============================================================
 echo.
 
 python -c "import pynput, PIL, numpy, mss, cv2" >nul 2>&1
 if errorlevel 1 (
     echo.
-    echo ❌ Не все библиотеки установлены успешно.
+    echo ERROR: Not all libraries installed successfully.
     echo.
-    echo 📋 РЕКОМЕНДАЦИИ:
+    echo RECOMMENDATIONS:
     echo.
-    echo 1. Удалите Python 3.14 и установите Python 3.11 или 3.12
-    echo    Скачать: https://www.python.org/downloads/
+    echo 1. Uninstall Python 3.14 and install Python 3.11 or 3.12
+    echo    Download: https://www.python.org/downloads/
     echo.
-    echo 2. Или используйте виртуальное окружение с Python 3.11:
+    echo 2. Or use virtual environment with Python 3.11:
     echo    python -m venv venv
     echo    venv\Scripts\activate
     echo    pip install -r requirements.txt
     echo.
 ) else (
     echo.
-    echo ╔══════════════════════════════════════════════════════════╗
-    echo ║           ✅ Установка завершена успешно!               ║
-    echo ╚══════════════════════════════════════════════════════════╝
+    echo ===============================================================
+    echo          Installation completed successfully!
+    echo ===============================================================
     echo.
-    echo Запустите приложение: run_tracker.bat
+    echo Launch app: run_tracker.bat
     echo.
 )
 
