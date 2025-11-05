@@ -7,7 +7,7 @@ cls
 echo.
 echo ╔═══════════════════════════════════════════════════════════════╗
 echo ║                                                               ║
-echo ║              🖱️  MOUSE TRACKER - STARTING...                ║
+echo ║                    STARTING MOUSE TRACKER                     ║
 echo ║                                                               ║
 echo ╚═══════════════════════════════════════════════════════════════╝
 echo.
